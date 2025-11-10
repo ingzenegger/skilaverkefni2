@@ -14,18 +14,45 @@ body {
   grid-template-columns: 50% 50%;
 }
 
+@media (max-width: 1000px) {
+  body {
+  display: flex;
+  flex-direction: column;  
+  font-size: 16px;
+  }
+ 
+}
+
 header {
   grid-column: 1 / 3;
   border: 3px solid white;
   border-radius: 25px;
   margin: 15px;
   padding: 15px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  
+}
+header h1 {
+  grid-column: 1/3;
   
 }
 
+header div {
+grid-column: 1/3;
+}
+header p {
+    font-size: 16px;
+  }
+#generator {
+  grid-column: 2/3;
+  font-size: 22px;
+  margin-left: 3rem;
+}
+
 img {
-  max-height: 500px;
+  max-width: 100%;
   border-radius: 25px;
 }
 #random-takki {
@@ -37,8 +64,8 @@ img {
 }
 
 #vasareiknir-container {
-  padding: 50px;
-  margin: 25px;
+  padding: 3rem;
+  margin: 3rem;
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(5, 20%);
@@ -71,15 +98,15 @@ img {
 }
 
 #reward-box {
-  padding: 50px;
-  margin: 25px;
+  padding: 3rem;
+  margin: 3rem;
   border: 2px solid white;
   border-radius: 25px;
   max-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+ }
 
 .numBox {
   display: flex;
