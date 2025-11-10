@@ -1,0 +1,100 @@
+/* Colors
+    000022 Oxford Blue
+    001242 Penn Blue
+    0094C6 Blue (NCS) - texti þarf að vera svartur
+    005E7C Lapis Lazuli
+    040F16 Rich Black */
+
+body {
+  color: white;
+  background-color: #001242;
+  font-family: "Archivo Black";
+  font-size: 22px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+header {
+  grid-column: 1 / 3;
+  border: 3px solid white;
+}
+
+img {
+  max-height: 400px;
+  border-radius: 25px;
+}
+
+#vasareiknir-container {
+  padding: 50px;
+  margin: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(5, 20%);
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  border: 2px solid white;
+  border-radius: 25px;
+  max-width: 600px;
+}
+
+#calc-svar-box {
+  background-color: #040f16;
+  color: white;
+  grid-column: 1 / 4;
+  margin: 15px;
+  padding: 30px;
+  border-radius: 25px;
+  border: 5px solid #0094c6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clear-box {
+  grid-column: 4/5;
+}
+
+#box-reikna {
+  grid-column: 3 / 5;
+}
+
+#reward-box {
+  padding: 30px;
+  border: 3px solid white;
+}
+
+.numBox {
+  display: flex;
+  padding: 30px;
+  margin: 15px;
+  background-color: #005e7c;
+  color: white;
+  border-radius: 25px;
+  border: 3px solid #005e7c;
+  justify-content: center;
+  align-items: center;
+}
+
+.reiknAdgerd {
+  display: flex;
+  padding: 30px;
+  margin: 15px;
+  background-color: #0094c6;
+  color: #040f16;
+  border-radius: 25px;
+  border: 3px solid #0094c6;
+  justify-content: center;
+  align-items: center;
+}
+
+.the-other-fuckers {
+  display: flex;
+  padding: 30px;
+  margin: 15px;
+  background-color: #0094c6;
+  color: #040f16;
+  border-radius: 25px;
+  border: 3px solid #0094c6;
+  justify-content: center;
+  align-items: center;
+}
