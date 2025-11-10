@@ -1,5 +1,11 @@
 ////Ætla að nota kommentin til að útskýra fyrir sjálfri mér hvað ég er að gera jafn óðum.
-// Hugmyndin er að þú byrjar að nota random number generator til að fá einhverja tölu milli 10 og 1000 og svo áttu að nota vasareikninn til að fá sömu tölu og þá dansar grísinn.
+// Hugmyndin er að þú byrjar að nota random number generator til að fá einhverja tölu milli 1 og 1000 og svo áttu að nota vasareikninn til að fá sömu tölu og þá dansar grísinn.
+
+//random number
+function randomNumber() {
+  let goalNumber = Math.floor(Math.random() * 100) + 1;
+  document.getElementById("generator").textContent = goalNumber;
+}
 
 ////Sækja öll numBox undir heitinu numTakkar:
 const numTakkar = document.querySelectorAll(".numBox");
@@ -40,10 +46,10 @@ reiknTakkar.forEach(function (takki) {
 ///og svo nákvæmlega sama fyrir other fuckers - örugglega til auðveldari leið fyrir þetta en læri örugglega eitthvað af því að skrifa sama stuffið aftur og aftur...we can always hope
 otherFuckers.forEach(function (takki) {
   takki.addEventListener("mouseover", function () {
-    takki.style.border = "3px solid black";
+    takki.style.backgroundColor = "white";
   });
   takki.addEventListener("mouseout", function () {
-    takki.style.border = "";
+    takki.style.backgroundColor = "";
   });
 });
 
