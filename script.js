@@ -72,13 +72,29 @@ reiknTakkar.forEach(function (takki) {
 
 document.getElementById("clear-box").addEventListener("click", function () {
   document.getElementById("calc-svar-box").innerHTML = "";
+  document.getElementById(
+    "reward-box"
+  ).innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
 });
+
+//reward function
+function getReward() {
+  const reward = document.getElementById("reward-box");
+  reward.innerHTML = `<img src="/pigsDance.gif" alt="" id="dancePiggy" />`;
+}
+
+// fail function
+function fail() {
+  const reward = document.getElementById("reward-box");
+  reward.innerHTML = `<img src="/disappointed-pig.gif" alt="" id="dancePiggy" />`;
+}
 
 ////functin á '=' sem breytir strengnum í svarboxinu í number og vonandi reiknar hann um leið?
 document.getElementById("box-reikna").addEventListener("click", function () {
   const daemi = document.getElementById("calc-svar-box").textContent;
   const nums = daemi.split(" ");
   console.log(nums);
+  const challenge = document.getElementById("generator").textContent;
   //nú er ég búin að sækja tölurnar og táknið sem notandi hefur slegið inn sem array, en tölurnar eru ennþá strengir, þar sem við erum bara með tvær tölur (Hjúkket!) þá getum við gert það individually. með lengra array hefðum við þurft að taka eð lúppu eða map eitthvað dæmi...
   nums[0] = Number(nums[0]);
   nums[2] = Number(nums[2]);
@@ -91,33 +107,38 @@ document.getElementById("box-reikna").addEventListener("click", function () {
     console.log(svar);
     //Nú er ég búin að reikna dæmið, svo er að skila því aftur í calc svar boxið
     document.getElementById("calc-svar-box").textContent = svar;
+    //og svo vil ég senda út verðlaunafunctionið ef svarið er rétt en fail functionið ef ekki rétt:
+    if (svar == challenge) {
+      getReward();
+    } else {
+      fail();
+    }
   } else if (nums.includes("-")) {
     let svar = nums[0] - nums[2];
     document.getElementById("calc-svar-box").textContent = svar;
+    if (svar == challenge) {
+      getReward();
+    } else {
+      fail();
+    }
   } else if (nums.includes("x")) {
     let svar = nums[0] * nums[2];
     document.getElementById("calc-svar-box").textContent = svar;
+    if (svar == challenge) {
+      getReward();
+    } else {
+      fail();
+    }
   } else if (nums.includes("/")) {
     let svar = nums[0] / nums[2];
     document.getElementById("calc-svar-box").textContent = svar;
+    if (svar == challenge) {
+      getReward();
+    } else {
+      fail();
+    }
   } else {
     document.getElementById("calc-svar-box").textContent =
       "sláðu inn dæmi með 2 tölum";
   }
 });
-
-////getReward Fúnksjón tekur content úr random number generator og niðurstöðu úr calculator og ef þau matcha þá dansar svínið
-
-function getReward() {
-  const challenge = document.getElementById("generator").textContent;
-  const answer = document.getElementById("calc-svar-box").textContent;
-  const reward = document.getElementById("reward-box");
-
-  if (challenge === answer) {
-    reward.innerHTML = `<img src="/pigsDance.gif" alt="" id="dancePiggy" />`;
-  } else {
-    reward.innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
-  }
-}
-document.getElementById("calc-svar-box").textContent.onchange = getReward();
-//getReward();
