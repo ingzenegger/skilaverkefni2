@@ -5,6 +5,9 @@
     005E7C Lapis Lazuli
     040F16 Rich Black */
 
+/* lagði upp með litina hér að ofan og setti bara memo með kommenti efst eins og sjá má... þegar ég var búin með javascript partinn langaði mig að breyta öllum litunum, hefði verið minni vinna með einhverju root dóti geri ég ráð fyrir, en kann ekki að nota það ennþá */
+
+/* Byrjum á að stæla það sem á að vera yfir allt, letur, backgrunn, font size etc */
 body {
   color: white;
   background-color: #001242;
@@ -14,20 +17,21 @@ body {
   grid-template-columns: 50% 50%;
 }
 
+/* Svo ætla ég að stilla af það sem er í header, sem er þá titillinn og random number generator */
 header {
   grid-column: 1 / 3;
-  border: 3px solid white;
-  border-radius: 25px;
+
   margin: 15px;
   padding: 15px;
-  display: flex;
-  
 }
 
-img {
-  max-height: 500px;
+#header-div {
+  font-size: 0.8rem;
+  border: 3px solid white;
   border-radius: 25px;
+  display: flex;
 }
+
 #random-takki {
   color: white;
   background-color: #005e7c;
@@ -36,6 +40,8 @@ img {
   border-radius: 25px;
 }
 
+/* Vasareiknirinn á sitt section og röðum saman því sem á heima þar */
+/* Byrjum á sjálfum containernum */
 #vasareiknir-container {
   padding: 50px;
   margin: 25px;
@@ -48,7 +54,7 @@ img {
   border-radius: 25px;
   max-width: 600px;
 }
-
+/* Svo raða ég rest með id styling á undan og svo class styling á eftir, og innan þeirra reyndi ég að hafa það í þeirri röð sem atriðin birtast í containernum, ef ég væri með stærra box með stór div undir sér hefði ég líklega haft það öfugt, eftir röð sem það birtist, og svo þar innan id - class. Væri áhugavert að skoða hvernig forritarar almennt raða hlutum  í CSS*/
 #calc-svar-box {
   background-color: #040f16;
   color: white;
@@ -68,17 +74,6 @@ img {
 
 #box-reikna {
   grid-column: 3 / 5;
-}
-
-#reward-box {
-  padding: 50px;
-  margin: 25px;
-  border: 2px solid white;
-  border-radius: 25px;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .numBox {
@@ -115,4 +110,23 @@ img {
   border: 3px solid #0094c6;
   justify-content: center;
   align-items: center;
+}
+
+/* Svo á Gunter sinn eigin container til að bíða með eftirvæntingu, hefði líklega átt að nota container líka hér í ID frekar en box, það væri skýrara */
+img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 25px;
+} /*erum bara með img í reward boxinu svo höfum það hér, en þetta er samt að stilla allar myndir í filenum, ef ég væri með myndir á fleiri stöðum hefði ég geymt þetta hjá body CSS*/
+
+#reward-box {
+  padding: 50px;
+  margin: 25px;
+  border: 2px solid white;
+  border-radius: 25px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ce1483;
 }
