@@ -18,6 +18,15 @@ body {
 }
 
 /* Svo ætla ég að stilla af það sem er í header, sem er þá titillinn og random number generator */
+@media (max-width: 1000px) {
+  body {
+  display: flex;
+  flex-direction: column;  
+  font-size: 16px;
+  }
+ 
+}
+
 header {
   grid-column: 1 / 3;
 
@@ -43,8 +52,8 @@ header {
 /* Vasareiknirinn á sitt section og röðum saman því sem á heima þar */
 /* Byrjum á sjálfum containernum */
 #vasareiknir-container {
-  padding: 50px;
-  margin: 25px;
+  padding: 3rem;
+  margin: 3rem;
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(5, 20%);
@@ -75,6 +84,17 @@ header {
 #box-reikna {
   grid-column: 3 / 5;
 }
+
+#reward-box {
+  padding: 3rem;
+  margin: 3rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 
 .numBox {
   display: flex;
