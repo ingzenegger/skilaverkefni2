@@ -77,12 +77,19 @@ reiknTakkar.forEach(function (takki) {
 
 ////function á clear div sem hreinsar content, þarf jú líka stundum að stroka út/byrja upp á nýtt.
 
-document.getElementById("clear-box").addEventListener("click", function () {
-  document.getElementById("calc-svar-box").innerHTML = "";
-  document.getElementById(
-    "reward-box"
-  ).innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
-});
+function clearBox () {
+document.getElementById("calc-svar-box").innerHTML = "";
+document.getElementById("reward-box")
+.innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
+}
+document.getElementById("clear-box").addEventListener('click', clearBox)
+
+// document.getElementById("clear-box").addEventListener("click", function () {
+//   document.getElementById("calc-svar-box").innerHTML = "";
+//   document.getElementById(
+//     "reward-box"
+//   ).innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
+// });
 
 //before the grand finale þarf að setja upp fúnksjónir fyrir það sem gerist þegar okkur tekst eða mistekst að fá rétta niðurstöðu:
 ////reward function
@@ -113,8 +120,10 @@ document.getElementById("box-reikna").addEventListener("click", function () {
   console.log(typeof nums[1], nums[1]);
   ///þá er að framkvæma actual útreikninga og afleiðingar...en byrjum á að tryggja að notandi reyni ekki að gera flóknari dæmi en við ráðum við:
   if (nums.length > 3) {
-    document.getElementById("calc-svar-box").textContent =
-      "sláðu inn dæmi með 2 tölum";
+    alert("sláðu inn dæmi með 2 tölum")
+    clearBox()
+    // document.getElementById("calc-svar-box").textContent =
+    //   "sláðu inn dæmi með 2 tölum";
   } else if (nums.includes("+")) {
     let svar = nums[0] + nums[2];
     console.log(svar);
@@ -151,7 +160,9 @@ document.getElementById("box-reikna").addEventListener("click", function () {
       fail();
     }
   } else {
-    document.getElementById("calc-svar-box").textContent =
-      "sláðu inn dæmi með 2 tölum";
+    alert("sláðu inn dæmi með 2 tölum")
+    clearBox()
+    // document.getElementById("calc-svar-box").textContent =
+    //   "sláðu inn dæmi með 2 tölum";
   }
 });
