@@ -12,33 +12,48 @@ body {
   color: white;
   background-color: #001242;
   font-family: "Archivo Black";
-  font-size: 22px;
+  font-size: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
+  gap: 1rem;
 }
 
-/* Svo ætla ég að stilla af það sem er í header, sem er þá titillinn og random number generator */
+/* af því við lærðum það tíma 15 þá bætti ég við smá media dúlli */
 @media (max-width: 1000px) {
   body {
-  display: flex;
-  flex-direction: column;  
-  font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
   }
- 
+  #header-div {
+    flex-direction: column;
+  }
+  #generator-div {
+    align-self: center;
+  }
 }
-
+/* Svo ætla ég að stilla af það sem er í header, sem er þá titillinn, leiðbeiningar og random number generator */
 header {
   grid-column: 1 / 3;
-
-  margin: 15px;
-  padding: 15px;
+  margin-right: auto;
+  padding: 1rem;
 }
 
 #header-div {
-  font-size: 0.8rem;
-  border: 3px solid white;
+  font-size: 1rem;
+  border: 2px solid white;
   border-radius: 25px;
   display: flex;
+  padding: 1rem;
+}
+#leidbeiningar-div {
+  padding: 0 1rem;
+}
+#generator-div {
+  padding: 1rem;
+  align-content: center;
+  justify-items: center;
+  font-size: 1.5rem;
 }
 
 #random-takki {
@@ -47,13 +62,14 @@ header {
   height: 80px;
   width: 150px;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 /* Vasareiknirinn á sitt section og röðum saman því sem á heima þar */
 /* Byrjum á sjálfum containernum */
 #vasareiknir-container {
   padding: 3rem;
-  margin: 3rem;
+  margin: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(5, 20%);
@@ -71,7 +87,7 @@ header {
   margin: 15px;
   padding: 30px;
   border-radius: 25px;
-  border: 5px solid #0094c6;
+  border: 3px solid #0094c6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,17 +100,6 @@ header {
 #box-reikna {
   grid-column: 3 / 5;
 }
-
-#reward-box {
-  padding: 3rem;
-  margin: 3rem;
-  border: 2px solid white;
-  border-radius: 25px;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
 
 .numBox {
   display: flex;
@@ -120,7 +125,7 @@ header {
   align-items: center;
 }
 
-.the-other-fuckers {
+.the-other-fuckers { /*pardon my french*/
   display: flex;
   padding: 30px;
   margin: 15px;
@@ -132,16 +137,16 @@ header {
   align-items: center;
 }
 
-/* Svo á Gunter sinn eigin container til að bíða með eftirvæntingu, hefði líklega átt að nota container líka hér í ID frekar en box, það væri skýrara */
+/* Svo á Gunter sinn eigin container þar sem hann bíður með eftirvæntingu,  */
 img {
   max-height: 100%;
   max-width: 100%;
   border-radius: 25px;
 } /*erum bara með img í reward boxinu svo höfum það hér, en þetta er samt að stilla allar myndir í filenum, ef ég væri með myndir á fleiri stöðum hefði ég geymt þetta hjá body CSS*/
 
-#reward-box {
-  padding: 50px;
-  margin: 25px;
+#reward-box { /*hefði líklega átt að nota container hér frekar en box, væri skýrara miðað við nöfnin á undan*/
+  padding: 3rem;
+  margin: 1rem;
   border: 2px solid white;
   border-radius: 25px;
   max-width: 600px;
