@@ -1,5 +1,5 @@
 ////Ætla að nota kommentin til að útskýra fyrir sjálfri mér hvað ég er að gera jafn óðum.
-// Hugmyndin er að þú byrjar að nota random number generator til að fá einhverja tölu milli 1 og 1000 og svo áttu að nota vasareikninn til að fá sömu tölu og þá dansar grísinn. Ef þú klúðrar því, we get the sads.
+// Hugmyndin er að þú byrjar að nota random number generator til að fá einhverja tölu milli 1 og 1000 og svo áttu að nota vasareikninn til að fá sömu tölu og þá dansar grísinn. Ef þú klúðrar því, we get the sads eða alert.
 
 //random number generator til að setja áskorun
 function randomNumber() {
@@ -77,12 +77,13 @@ reiknTakkar.forEach(function (takki) {
 
 ////function á clear div sem hreinsar content, þarf jú líka stundum að stroka út/byrja upp á nýtt.
 
-function clearBox () {
-document.getElementById("calc-svar-box").innerHTML = "";
-document.getElementById("reward-box")
-.innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
+function clearBox() {
+  document.getElementById("calc-svar-box").innerHTML = "";
+  document.getElementById(
+    "reward-box"
+  ).innerHTML = `<img src="/gunterStill2.jpg" alt="" id="waitPiggy" />`;
 }
-document.getElementById("clear-box").addEventListener('click', clearBox)
+document.getElementById("clear-box").addEventListener("click", clearBox);
 
 // document.getElementById("clear-box").addEventListener("click", function () {
 //   document.getElementById("calc-svar-box").innerHTML = "";
@@ -120,10 +121,8 @@ document.getElementById("box-reikna").addEventListener("click", function () {
   console.log(typeof nums[1], nums[1]);
   ///þá er að framkvæma actual útreikninga og afleiðingar...en byrjum á að tryggja að notandi reyni ekki að gera flóknari dæmi en við ráðum við:
   if (nums.length > 3) {
-    alert("sláðu inn dæmi með 2 tölum")
-    clearBox()
-    // document.getElementById("calc-svar-box").textContent =
-    //   "sláðu inn dæmi með 2 tölum";
+    alert("sláðu inn dæmi með 2 tölum");
+    clearBox();
   } else if (nums.includes("+")) {
     let svar = nums[0] + nums[2];
     console.log(svar);
@@ -160,9 +159,7 @@ document.getElementById("box-reikna").addEventListener("click", function () {
       fail();
     }
   } else {
-    alert("sláðu inn dæmi með 2 tölum")
-    clearBox()
-    // document.getElementById("calc-svar-box").textContent =
-    //   "sláðu inn dæmi með 2 tölum";
+    alert("sláðu inn dæmi með 2 tölum");
+    clearBox();
   }
 });
